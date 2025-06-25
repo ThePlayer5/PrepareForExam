@@ -94,17 +94,48 @@ namespace PrepareForExam
             //Console.WriteLine(result);
 
             // Task 8
-            Console.WriteLine("Enter string: ");
-            string str = Console.ReadLine(); // aboba
-            string str2 = str;
-            string str3 = string.Empty;
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (i == str.Length - i - 1)
-                {
+            //Console.WriteLine("Enter string: ");
+            //string str = Console.ReadLine(); // aboba
+            //string str2 = str;
+            //string str3 = string.Empty;
+            //for (int i = 0; i < str.Length; i++)
+            //{
+            //    if (i == str.Length - i - 1)
+            //    {
 
+            //    }
+            //}
+
+            // Таблица умножения
+            int[,] mass = new int[11,11];
+            for (int i = 0; i < mass.GetLength(0); i++)
+            {
+                for (int j = 0; j < mass.GetLength(1); j++)
+                {
+                    if (i - j == 0)
+                    {
+                        mass[i, j] = i * i;
+                    }
+                    else if (i - j < 0)
+                    {
+                        mass[i, j] = i * j;
+                    }
+                    else if (i - j > 0)
+                    {
+                        mass[i, j] = i * j;
+                    }
                 }
             }
+            for (int i = 1; i < mass.GetLength(0); i++)
+            {
+                for(int j = 1;j  < mass.GetLength(1); j++)
+                {
+                    Console.Write(mass[i, j] + "  ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
         }
     }
 }
